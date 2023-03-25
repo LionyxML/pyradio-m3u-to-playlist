@@ -1,15 +1,25 @@
 """Functions used to convert m3u to CSV."""
 
+last_group = ''
 
 def create_csv_line(index: int, line: str, fullList: list) -> str:
     """Format a CSV line from m3u."""
+    global last_group
     if line.startswith("#"):
         return None
 
-    title = fullList[index - 1].split(",")[-1]
+    try:
+        group, title = fullList[index - 1].split('" group-title="')[1].split('", ')
+    except IndexError:
+        title = fullList[index - 1].split(",")[-1]
+        group = ''
 
-    return f"{title},{line}"
-
+    if group != last_group:
+        out = f'"{group}",-\n"{title}",{line}'
+        last_group = group
+    else:
+        out = f'"{title}",{line}'
+    return out
 
 def convert_m3u_to_csv(m3u_content: list) -> list:
     """Given the content of a m3u file, returns the contents for a CSV file."""
