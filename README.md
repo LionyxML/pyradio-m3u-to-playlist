@@ -1,4 +1,4 @@
-# pyradio-m3u-to-playlist
+# m3u-to-pyradio-playlist
 
 A pyradio playlist generator from m3u playlist files.
 
@@ -99,9 +99,9 @@ Clone this repository, cd into it and run:
 You can call commands just like if you where from the executable commandline
 preciding it with `pipenv run python` with:
 
-`pipenv run python m3u-to-pyradio --help`
+`pipenv run python m3u_to_pyradio --help`
 
-`pipenv run python m3u-to-pyradio -i playlist.m3u -o playlist.csv`
+`pipenv run python m3u_to_pyradio -i playlist.m3u -o playlist.csv`
 
 ### Build
 
@@ -112,7 +112,7 @@ pipenv run python setup.py sdist bdist_wheel
 cd dist
 pip install [the file generated].tar.gz
 cd ~
-m3u-to-pyradio --help
+m3u_to_pyradio --help
 ```
 
 You than could uninstall with:
