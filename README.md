@@ -7,15 +7,16 @@ Did you ever wanted to insert that huge playlist m3u file into `pyradio`?
 Or even automatically download and convert a m3u playlist file from somewhere else and run on pyradio?
 
 Example:
+
 ![Demo gif](./doc/demo.gif)
 
-### Install and Usage
+## Install and Usage
 
-#### Install
+### Install
 
 Run `pip install m3u_to_pyradio_playlist` and you're ready to go.
 
-#### Usage
+### Usage
 
 You should check `m3u-to-pyradio --help` for options:
 
@@ -43,13 +44,13 @@ options:
                         ~/.config/pyradio/stations.csv
 ```
 
-##### I have a m3u file i'd like to import to pyradio
+### I have a m3u file i'd like to import to pyradio
 
 `m3u_to_pyradio -i my_playlist.m3u -o converted.csv`
 
 Now go to `pyradio` config folder and add your custom `converted.csv` playlist.
 
-##### I wan't a pre-built stations list
+### I wan't a pre-built stations list
 
 Just run `m3u_to_pyradio -d` and it will automatically download the
 `---everything-full.m3u` playlist from:
@@ -57,7 +58,7 @@ https://github.com/junguler/m3u-radio-music-playlists
 
 And save it to `stations.csv`. Now use it with pyradio.
 
-##### I just want to automatically download a pre-built stations list and override my `stations.csv`
+### I just want to automatically download a pre-built stations list and override my `stations.csv`
 
 _DANGER_ this will override your current playlist. Backup it first!
 
@@ -72,18 +73,18 @@ Want to automatically updates the list and run pyradio?
 Assuming you're on a shell and already have pyradio installed:
 `m3u_to_pyradio -a && pyradio`
 
-#### Uninstall
+## Uninstall
 
 Simply use:
 `pip uninstall m3u_to_pyradio_playlist`
 
-### Development
+## Development
 
 If you want to use this package for development, without needin to proper
 install the dist via pip, this project is made with pipenv, that is both an venv
 manager and a pip tool combined.
 
-#### Installing and Testing
+### Installing and Testing
 
 Make sure you have the version of Python present on `Pipfile` and that you
 installed `pipenv` globally with: `pip install pipenv`
@@ -95,7 +96,7 @@ You can call commands just like if you where from the executable commandline
 preciding it with `pipenv run python` with: `pipenv run python m3u-to-pyradio
 --help` `pipenv run python m3u-to-pyradio -i playlist.m3u -o playlist.csv`
 
-#### Build
+### Build
 
 If you want to build it and install your own.
 
