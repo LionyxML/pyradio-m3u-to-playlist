@@ -56,7 +56,9 @@ Just run `m3u_to_pyradio -d` and it will automatically download the
 `---everything-full.m3u` playlist from:
 https://github.com/junguler/m3u-radio-music-playlists
 
-And save it to `stations.csv`. Now use it with pyradio.
+And save it to `stations.csv`.
+
+Now use it with pyradio.
 
 ### I just want to automatically download a pre-built stations list and override my `stations.csv`
 
@@ -80,9 +82,11 @@ Simply use:
 
 ## Development
 
-If you want to use this package for development, without needin to proper
-install the dist via pip, this project is made with pipenv, that is both an venv
-manager and a pip tool combined.
+If you want to use this package for development, without installing the dist via
+pip.
+
+This project is made with pipenv, that is both an venv manager and a pip
+tool combined.
 
 ### Installing and Testing
 
@@ -93,8 +97,11 @@ Clone this repository, cd into it and run:
 `pipenv install`
 
 You can call commands just like if you where from the executable commandline
-preciding it with `pipenv run python` with: `pipenv run python m3u-to-pyradio
---help` `pipenv run python m3u-to-pyradio -i playlist.m3u -o playlist.csv`
+preciding it with `pipenv run python` with:
+
+`pipenv run python m3u-to-pyradio --help`
+
+`pipenv run python m3u-to-pyradio -i playlist.m3u -o playlist.csv`
 
 ### Build
 
