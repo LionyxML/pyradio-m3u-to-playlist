@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 setuptools = "*"
+requests = "*"
 
 [dev-packages]
 setuptools = "*"

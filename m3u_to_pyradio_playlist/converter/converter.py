@@ -1,8 +1,8 @@
-"""Contain the function to convert m3u to CSV."""
+"""Functions used to convert m3u to CSV."""
 
 
 def create_csv_line(index: int, line: str, fullList: list) -> str:
-    """Format a CSV line from m3u"""
+    """Format a CSV line from m3u."""
     if line.startswith("#"):
         return None
 
