@@ -4,12 +4,16 @@ A pyradio playlist generator from m3u playlist files.
 
 Did you ever wanted to insert that huge playlist m3u file into `pyradio`?
 
-### Using it
+Or even automatically download and convert a m3u playlist file from somewhere else and run on pyradio?
+
+Example:
+![Demo gif](./doc/demo.gif)
+
+### Install and Usage
 
 #### Install
 
-Download the `m3u_to_pyradio_playlist-X.X.X.tar.gz` file.
-Run `pip install m3u_to_pyradio_playlist-X.X.X.tar.gz` and you're ready to go.
+Run `pip install m3u_to_pyradio_playlist` and you're ready to go.
 
 #### Usage
 
