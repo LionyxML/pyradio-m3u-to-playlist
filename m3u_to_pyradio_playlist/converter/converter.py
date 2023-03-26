@@ -2,6 +2,25 @@
 
 last_group = ''
 
+def html_entities_to_unicode_chars(a_string: str) -> str:
+    ent = {
+        '&#039;': "'",
+        '&#1110;': 'і',
+        '&#225;': 'á',
+        '&#227;': 'ã',
+        '&#39;': "'",
+        '&#47;': '/',
+        '&#93;': ']',
+        '&amp;': '&',
+        '&apos;': "'",
+        '&gt;': '>',
+        '&quot;': '"',
+        '&#xe1;': 'á',
+    }
+    for n in ent.keys():
+        a_string = a_string.replace(n, ent[n])
+    return a_string
+
 def create_csv_line(index: int, line: str, fullList: list) -> str:
     """Format a CSV line from m3u."""
     global last_group
@@ -19,7 +38,7 @@ def create_csv_line(index: int, line: str, fullList: list) -> str:
         last_group = group
     else:
         out = f'"{title}",{line}'
-    return out
+    return html_entities_to_unicode_chars(out)
 
 def convert_m3u_to_csv(m3u_content: list) -> list:
     """Given the content of a m3u file, returns the contents for a CSV file."""
