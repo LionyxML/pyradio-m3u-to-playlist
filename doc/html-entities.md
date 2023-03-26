@@ -12,6 +12,7 @@ For this method to work, the following packages must be installed:
 
 - grep
 - sed
+- sort
 - w3m
 
 ## How to get HTML entities
@@ -30,7 +31,7 @@ Finally, get the dictionary
     do
         echo -n "'""$line""': '"
         echo -n "$line" | w3m -dump -T text/html
-    done < html | sed -e "s/$/',/" -e "s/'''/\"'\"/g"''"'"'"
+    done < html | sed -e "s/$/',/" -e "s/'''/\"'\"/g"
     rm html
 
 which gives:
@@ -54,3 +55,7 @@ This is the outpupt (in `pyradio`)
 
 
 ![Mabox_20230326-02-45-28](https://user-images.githubusercontent.com/5807638/227749414-b8edddfb-68df-4206-99f3-cba57a6c443b.png)
+
+and that's how it used to be (without HTML entities replacement)
+
+![227746116-93efaec3-897d-4b90-ae63-c428a78f500c](https://user-images.githubusercontent.com/5807638/227765781-b8b0f1fe-357e-4fc3-9272-3769ccba45df.png)
