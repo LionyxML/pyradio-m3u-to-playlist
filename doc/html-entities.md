@@ -49,3 +49,8 @@ which gives:
     '&#xe1;': 'á',
 
 Copy (and replace) this output in `converter.py`, dictionary **ent**.
+
+This is the outpupt (in `pyradio`)
+
+
+![Mabox_20230326-02-45-28](https://user-images.githubusercontent.com/5807638/227749414-b8edddfb-68df-4206-99f3-cba57a6c443b.png)
