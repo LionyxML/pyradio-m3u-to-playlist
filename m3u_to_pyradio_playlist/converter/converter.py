@@ -15,7 +15,7 @@ def html_entities_to_unicode_chars(a_string: str) -> str:
         '&apos;': "'",
         '&gt;': '>',
         '&quot;': "''",
-        '"', "''",
+        '"': "''",
         '&#xe1;': 'á',
     }
     for n in ent.keys():
