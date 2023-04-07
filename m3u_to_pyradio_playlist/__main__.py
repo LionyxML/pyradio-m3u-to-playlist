@@ -8,6 +8,8 @@ from .converter import convert_m3u_to_csv
 from .utils import is_not_blank
 from .downloader import get_huge_playlist
 
+from .__init__ import __version__
+
 
 def main():
     """Run main function."""
@@ -26,20 +28,23 @@ examples:
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument(
+        "-v", "--version", action="version", version=f"%(prog)s {__version__}"
+    )
+    parser.add_argument(
         "-i",
         "--input",
-        help="The m3u input file",
+        help="the m3u input file",
     )
     parser.add_argument(
         "-o",
         "--output",
-        help="The output CSV file where playlist will be saved",
+        help="the output CSV file where playlist will be saved",
     )
     parser.add_argument(
         "-d",
         "--download-super-list",
         help=(
-            "Download and convert the complete m3u list from "
+            "download and convert the complete m3u list from "
             "https://github.com/junguler/m3u-radio-music-playlists."
         ),
         action="store_true",
@@ -48,7 +53,7 @@ examples:
         "-a",
         "--auto",
         help=(
-            "DANGER: Same as -dsl but OVERRIDES "
+            "DANGER: same as -dsl but OVERRIDES "
             "your ~/.config/pyradio/stations.csv"
         ),
         action="store_true",
