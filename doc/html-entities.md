@@ -31,7 +31,7 @@ Finally, get the dictionary
     do
         echo -n "'""$line""': '"
         echo -n "$line" | w3m -dump -T text/html
-    done < html | sed -e "s/$/',/" -e "s/'''/\"'\"/g"
+    done < html | sed -e "s/$/',/" -e "s/'''/\"'\"/g" -e "s/'\"'/'”'/"
     rm html
 
 which gives:
@@ -46,10 +46,12 @@ which gives:
     '&amp;': '&',
     '&apos;': "'",
     '&gt;': '>',
-    '&quot;': '"',
+    '&quot;': '”',
     '&#xe1;': 'á',
 
 Copy (and replace) this output in `converter.py`, dictionary **ent**.
+
+**Note:** \&quot; will be replaced by ” (U+201D) instead of the regular " (U+0022).
 
 This is the outpupt (in `pyradio`)
 

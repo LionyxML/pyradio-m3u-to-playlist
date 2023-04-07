@@ -3,6 +3,12 @@
 last_group = ''
 
 def html_entities_to_unicode_chars(a_string: str) -> str:
+    """ replace HTML entities found in text
+        refer to doc/html-entities.md for more info
+
+        &quot; will be replaced by ” (U+201D)
+        instead of a regular " (U+0022)
+    """
     ent = {
         '&#039;': "'",
         '&#1110;': 'і',
@@ -14,7 +20,7 @@ def html_entities_to_unicode_chars(a_string: str) -> str:
         '&amp;': '&',
         '&apos;': "'",
         '&gt;': '>',
-        '&quot;': '``',
+        '&quot;': '”',
         '&#xe1;': 'á',
     }
     for n in ent.keys():
@@ -26,6 +32,9 @@ def create_csv_line(index: int, line: str, fullList: list) -> str:
     global last_group
     if line.startswith("#"):
         return None
+
+    # just to be in the safe side
+    line = line.replace('"', '&quot;')
 
     try:
         group, title = fullList[index - 1].split('" group-title="')[1].split('", ')
