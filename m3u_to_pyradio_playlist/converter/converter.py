@@ -14,7 +14,7 @@ def html_entities_to_unicode_chars(a_string: str) -> str:
         '&amp;': '&',
         '&apos;': "'",
         '&gt;': '>',
-        '&quot;': '"',
+        '&quot;': '``',
         '&#xe1;': 'á',
     }
     for n in ent.keys():
@@ -32,12 +32,16 @@ def create_csv_line(index: int, line: str, fullList: list) -> str:
     except IndexError:
         title = fullList[index - 1].split(",")[-1]
         group = ''
+    try:
+        logo = fullList[index - 1].split(' tvg-logo="')[1].split('", ')[0].split('" ')[0]
+    except IndexError:
+        logo = ''
 
     if group != last_group:
-        out = f'"{group}",-\n"{title}",{line}'
+        out = f'"{group}",-,,\n"{title}",{line},,{logo}'
         last_group = group
     else:
-        out = f'"{title}",{line}'
+        out = f'"{title}",{line},,{logo}'
     return html_entities_to_unicode_chars(out)
 
 def convert_m3u_to_csv(m3u_content: list) -> list:
